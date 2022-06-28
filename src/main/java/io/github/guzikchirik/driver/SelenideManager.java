@@ -74,8 +74,14 @@ public class SelenideManager {
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true);
         options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.ACCEPT);
-        options.addArguments("--use-fake-device-for-media-stream", "--use-fake-ui-for-media-stream",
-                             "--enable-usermedia-screen-capturing", "--allow-real-media", "--test-type", "--disable-popup-blocking");
+        options.addArguments("--use-fake-device-for-media-stream",
+                             "--use-fake-ui-for-media-stream",
+                             "--enable-usermedia-screen-capturing",
+                             "--allow-real-media",
+                             "--test-type",
+                             "--disable-popup-blocking",
+                             "--disable-dev-shm-usage",
+                             "--no-sandbox");
         if (headless) {
             options.addArguments("--headless");
         }
